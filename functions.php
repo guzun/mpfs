@@ -522,3 +522,57 @@ require get_template_directory() . '/inc/customizer.php';
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
 }
+
+
+/*===================BOF MPFS==================*/
+
+include 'custom_functions.php';
+
+if( function_exists( 'add_image_size' ) ){
+
+    add_image_size( '60x60'     		, 60    , 60    , true );
+    add_image_size( '170x100'           , 170   , 100   , true );   /* similar post 1/3 */
+    add_image_size( '210x100'           , 210   , 100   , true );   /* similar post 1/4 */
+    add_image_size( '290x150'           , 290   , 150   , true );   /* category grid view  1/3 from content */
+    add_image_size( '285x150'           , 285   , 150   , true );   /* category grid view  1/2 from content */
+	add_image_size( '320xXXX'           , 320   , 9999   ); 
+    add_image_size( '600xXXX'           , 600   , 9999  );
+    add_image_size( '920xXXX'           , 920   , 9999  );
+	add_image_size( '200x100'           , 200   , 100   , true ); /* gallery size */
+}
+
+/*add featured image to the feed*/
+function mpfs_featuredtoRSS($content) {
+	global $post;
+	if ( has_post_thumbnail( $post->ID ) ){
+	//$content = '' . get_the_post_thumbnail( $post->ID, '320xXXX', array( 'style' => 'float:left; margin:0 15px 15px 0;' ) ) . '<br/>' . $content;
+	$content = '' . get_the_post_thumbnail( $post->ID, '320xXXX', array( 'style' => 'float:left; margin:0 15px 15px 0;' ) ) . get_the_post_thumbnail( $post->ID, '600xXXX', array( 'style' => 'float:left; margin:0 15px 15px 0;' ) ) . '<br/>' . '<br/>' . $content;
+	
+	}
+	return $content;
+}
+ 
+
+
+add_filter('the_excerpt_rss', 'mpfs_featuredtoRSS');
+add_filter('the_content_feed', 'mpfs_featuredtoRSS');
+
+
+remove_all_actions( 'do_feed_rss2' );
+add_action( 'do_feed_rss2', 'mpfs_feed_rss2', 9, 1 );
+
+function mpfs_feed_rss2( $for_comments ) { 
+	//$rss_template = get_template_directory() . '/feeds/feed-rss2-cosmo.php';
+	
+	if(isset($_GET['appinfo']) && $_GET['appinfo'] == 1){
+		$rss_template = get_template_directory() . '/feeds/feed-rss2-appinfo.php';
+		
+	}else{
+		$rss_template = get_template_directory() . '/feeds/feed-rss2-mpfs.php';
+		
+	}
+	
+		load_template( $rss_template ); 
+}
+
+
