@@ -22,8 +22,10 @@
 			endif;
 
 			if ( is_single() ) :
+				like::content(get_the_ID(),$return = false, $show_icon = true, $show_label = false);
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			else :
+				like::content(get_the_ID(),$return = false, $show_icon = true, $show_label = false);
 				the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 			endif;
 		?>

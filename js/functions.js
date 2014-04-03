@@ -126,3 +126,48 @@
 		}
 	} );
 } )( jQuery );
+
+/*   BOF customization  */
+
+var act = new Object();
+
+act.like = function (post_id, selector, action) {
+
+    var lk = 0;
+    jQuery(function () {
+        jQuery('.top_love_' + post_id).show();
+
+
+        act.like_ajax(post_id, action, selector);
+
+    });
+};
+
+act.go_random = function () {
+    jQuery(function () {
+        jQuery.post(MyAjax.ajaxurl, {"action":"go_random"}, function (result) {
+            document.location.href = result;
+        });
+    });
+};
+
+act.like_ajax = function (post_id, action, selector) {
+    jQuery(function () {
+        jQuery.post(
+            MyAjax.ajaxurl, {"action":'like',
+                "post_id":post_id,
+                "meta_type":action
+            },
+            function (result) {
+
+                jQuery('i.like-' + post_id).html(result);
+
+                if (jQuery(selector).parents('span.voteaction').hasClass('voted')) {
+                    jQuery(selector).parents('span.voteaction').removeClass('voted');
+                } else {
+                    jQuery(selector).parents('span.voteaction').addClass('voted');
+                }
+
+            })
+    });
+};

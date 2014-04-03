@@ -4148,3 +4148,27 @@ a.post-thumbnail:hover {
 		line-height: 36px;
 	}
 }
+
+
+/*  BOF customization */
+
+.like.voteaction {
+	width: 48px;
+	height: 42px;
+	left: -50px;
+	display: block;
+	position: absolute;
+	top: 0;
+	background: url(images/love.png) no-repeat;
+	cursor: pointer;
+}
+
+.like .like-count{
+	width: 48px;
+	text-align: center;
+	position: absolute;
+	top: 10px;
+	left:0px;
+	font-size: 12px;
+	font-family: Helvetica, Arial, sans-serif;
+}
