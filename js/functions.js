@@ -129,6 +129,11 @@
 
 /*   BOF customization  */
 
+jQuery(document).ready(function(){
+	jQuery('.au-hasard').click(function(){
+		act.go_random();
+	});
+});
 var act = new Object();
 
 act.like = function (post_id, selector, action) {
