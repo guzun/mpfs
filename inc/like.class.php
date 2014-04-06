@@ -106,19 +106,22 @@
                 $user_id = 0;
             }
 
-            if( $user_id > 0 ){
-                foreach( $likes as $like ){
-                    if( isset( $like['user_id'] ) && $like['user_id'] == $user_id ){
-                        return true;
+            if(sizeof($likes) && is_array($likes)){
+                if( $user_id > 0 ){
+                    foreach( $likes as $like ){
+                        if( isset( $like['user_id'] ) && $like['user_id'] == $user_id ){
+                            return true;
+                        }
                     }
-                }
-            }else{
-                foreach( $likes as $like ){
-                    if( isset( $like['ip'] ) && $like['ip'] == $ip ){
-                        return true;
+                }else{
+                    foreach( $likes as $like ){
+                        if( isset( $like['ip'] ) && $like['ip'] == $ip ){
+                            return true;
+                        }
                     }
                 }
             }
+            
 
             return false;
         }
