@@ -186,8 +186,10 @@ function twentyfourteen_post_thumbnail() {
 	<?php
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
 			the_post_thumbnail( 'twentyfourteen-full-width' );
+			
 		} else {
-			the_post_thumbnail();
+			//the_post_thumbnail();
+			the_post_thumbnail( '600xXXX' );
 		}
 	?>
 	</div>
@@ -196,8 +198,10 @@ function twentyfourteen_post_thumbnail() {
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 	<?php
-		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
-			the_post_thumbnail( 'twentyfourteen-full-width' );
+		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) || is_archive() || is_front_page() ) ) {
+			//the_post_thumbnail( 'twentyfourteen-full-width' );
+			the_post_thumbnail( '320xXXX' );
+			
 		} else {
 			the_post_thumbnail();
 		}
