@@ -4319,3 +4319,10 @@ a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
 	.box-related article{ width: 100%; display: inline-block; }
 }
 .box-related article .readmore.related{ padding: 0 15px; }
+
+@media screen and (min-width: 673px){
+	.content-sidebar {
+		padding-left: 0px;
+		padding-right: 10px;
+	}	
+}
