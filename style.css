@@ -4304,3 +4304,18 @@ a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
 
 	.site-navigation .menu-item.au-hasard{ cursor: pointer; }
 }
+
+
+/*related posts*/
+
+.box-related{
+	padding: 0 30px;
+}
+.box-related .related-title, .box-related h4{ padding-left: 15px }
+.box-related h4{margin-top: 5px; color: #707070}
+.box-related article{ width: 33%; display: inline-block; }
+
+@media screen and (max-width: 782px){
+	.box-related article{ width: 100%; display: inline-block; }
+}
+.box-related article .readmore.related{ padding: 0 15px; }

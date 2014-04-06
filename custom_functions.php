@@ -66,6 +66,43 @@
         echo $result;
         exit;
        
-    }				
+    }	
+
+    /* related posts by herarchical taxonomy */
+    /* get tax slugs and number of similar posts  */ 
+    function similar_query( $post_id , $taxonomy , $nr ){
+        if( $nr > 0 ){
+            $topics = wp_get_post_terms( $post_id , $taxonomy );
+
+            $terms = array();
+            if( !empty( $topics ) ){
+                foreach ( $topics as $topic ) {
+                    $term = get_category( $topic );
+                    array_push( $terms, $term -> slug );
+                }
+            }
+
+            if( !empty( $terms ) ){
+                $query = new WP_Query( array(
+                    'post__not_in' => array( $post_id ) ,
+                    'posts_per_page' => $nr,
+                    'orderby' => 'rand',
+                    'tax_query' => array(
+                        array(
+                        'taxonomy' => $taxonomy ,
+                        'field' => 'slug',
+                        'terms' => $terms ,
+                        )
+                    )
+                ));
+            }else{
+                $query = array();
+            }
+        }else{
+            $query = array();
+        }
+
+        return $query;
+    }			
 				
 ?>

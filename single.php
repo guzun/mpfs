@@ -29,6 +29,8 @@ get_header(); ?>
 					if ( comments_open() || get_comments_number() ) {
 						comments_template();
 					}
+
+					get_template_part( 'related-posts' );
 				endwhile;
 			?>
 		</div><!-- #content -->
