@@ -41,4 +41,31 @@
 
 			return $feed_info;
 	}
+
+	/*action hook for the site copyright*/
+	add_action('twentyfourteen_credits','mpfs_copyright');
+
+	function mpfs_copyright(){
+
+		echo 'MPFS | Copyright © '.date('Y').'. Tous droits réservés. <a href="http://www.socialcooking.fr" target="_blank">Blog Cuisine</a> | <a href="http://www.voyage-et-decouvertes.com" target="_blank">Blog Voyage</a>';
+	}
+	
+	/* gets a random post and returns its URL */
+	function random_posts(){
+        
+        $wp_query = new WP_Query( array( 'post_status' => 'publish' ,'post_type' => 'post' , 'posts_per_page' => 1 , 'orderby' => 'rand'   ) );
+
+        if( $wp_query -> found_posts > 0 ){
+            $k = 0;
+            foreach( $wp_query -> posts as $post  ){
+                $wp_query -> the_post();
+                $result = get_permalink( $post -> ID );
+            }
+        }
+
+        echo $result;
+        exit;
+       
+    }				
+				
 ?>
