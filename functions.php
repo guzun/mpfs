@@ -171,7 +171,7 @@ function twentyfourteen_widgets_init() {
 	require get_template_directory() . '/inc/widgets.php';
 	register_widget( 'Twenty_Fourteen_Ephemera_Widget' );
 
-	register_sidebar( array(
+	/*register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'twentyfourteen' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Main sidebar that appears on the left.', 'twentyfourteen' ),
@@ -179,7 +179,7 @@ function twentyfourteen_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	) );
+	) );*/
 	register_sidebar( array(
 		'name'          => __( 'Content Sidebar', 'twentyfourteen' ),
 		'id'            => 'sidebar-2',
@@ -587,6 +587,11 @@ function mpfs_feed_rss2( $for_comments ) {
 /* add like action */
 add_action( 'wp_ajax_like' , array( 'like' , 'set' ) );
 add_action( 'wp_ajax_nopriv_like' , array( 'like' , 'set' ) );
+
+
+add_action( 'wp_ajax_go_random' , 'random_posts' );
+add_action( 'wp_ajax_nopriv_go_random' , 'random_posts');
+
 
 
 
