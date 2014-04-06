@@ -3879,11 +3879,12 @@ a.post-thumbnail:hover {
 
 	.site-content,
 	.site-main .widecolumn {
-		margin-left: 222px;
+		margin-left: 0px;
 	}
 
 	.site:before {
-		width: 222px;
+		width: 0px;
+		display: none;
 	}
 
 	.search-box-wrapper,
@@ -4171,4 +4172,135 @@ a.post-thumbnail:hover {
 	left:0px;
 	font-size: 12px;
 	font-family: Helvetica, Arial, sans-serif;
+}
+
+#secondary{
+	display: none;
+}
+
+.site-header{ 
+	max-width: 1024px; background-color: 	#fff; 
+	padding: 10px 0px;
+	border-bottom: 1px solid #cfcfcf;
+}
+.site-title img{/* max-height: 44px;*/ }
+.site{max-width: 1024px; margin: 0 auto;}
+
+.site:before {
+	width: 0px;
+	display: none;
+}
+
+
+
+.site-navigation a, .search-toggle:before, .menu-toggle:before{color: #707070;}
+
+.site-navigation a:hover{ color: #545454; }
+
+/*search hover bg*/
+.search-toggle:hover, .search-toggle.active, .search-box, .search-toggle{ background-color: transparent; }
+.search-box .search-field {
+	border: 1px solid #707070;
+}
+
+@media screen and (max-width: 782px){
+	.menu-main-menu-container{
+		background: #A3C3AA;
+		padding: 0 10px;
+		width: 100%;
+		margin-left: -10px;	
+	}
+}
+
+@media screen and (min-width: 783px){
+	.site-navigation{ font-size: 14px; }
+
+	.site-navigation li .current_page_item > a, .site-navigation li .current_page_ancestor > a, .site-navigation li .current-menu-item > a, .site-navigation li .current-menu-ancestor > a {
+		color: #545454;
+	}
+	.primary-navigation li:hover > a, .primary-navigation li.focus > a {
+		background-color: #24890d;
+		color: #fff;
+	}
+
+	/*menu hover bg color*/
+	.primary-navigation li:hover > a, .primary-navigation li.focus > a {
+		background-color: #fff;
+		color: #3a3a3a;
+	}
+
+	/*submenu bg color*/
+	.primary-navigation ul ul, .primary-navigation ul ul a:hover, .primary-navigation ul ul li.focus > a {
+		background-color: #fff;
+	}
+	.primary-navigation ul.sub-menu{
+		padding: 0 10px;
+		border: 1px dotted grey;
+		
+		border-radius: 4px;
+	}
+
+	.primary-navigation ul li:hover > ul {
+		left: 0px;
+	}
+
+}
+
+
+
+button, .contributor-posts-link, input[type="button"], input[type="reset"], input[type="submit"]{
+	background-color: #afafaf;
+}
+
+button:hover, button:focus, .contributor-posts-link:hover, input[type="button"]:hover, 
+input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus{
+	background-color: #9C9595;
+}
+.site-navigation .current_page_item > a, .site-navigation .current_page_ancestor > a, 
+.site-navigation .current-menu-item > a, .site-navigation .current-menu-ancestor > a{
+	color: #545454;
+}
+
+@media screen and (min-width: 1040px){
+	.site-content .has-post-thumbnail .entry-header {
+		margin-top: 0px; 
+	}	
+}
+
+.site-content .has-post-thumbnail .entry-header{
+	padding-top: 0px;
+}
+
+.post-thumbnail{text-align: center;}
+
+a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
+
+@media screen and (min-width: 783px){
+	.site-navigation .menu-item{ padding-left: 15px; }
+	.site-navigation .menu-item a:before{
+		width: 30px;
+		height: 22px;
+		content: ' ';
+		left: 0px;
+		top: 12px;
+		position: absolute;
+		background: url(images/menu.sprite.png) no-repeat 0 0;	
+
+		-webkit-transition: color, background 0.2s linear;
+		-moz-transition: color, background 0.2s linear;
+		-ms-transition: color, background 0.2s linear;
+		-o-transition: color, background 0.2s linear;
+		transition: color, background 0.2s linear;
+	}
+
+	.site-navigation .menu-item.les-derniers a:before{ background-position: 0 -66px; }
+	.site-navigation .menu-item.les-derniers:hover > a:before, .site-navigation .current_page_item.les-derniers > a:before{ background-position: 0 -88px; }
+
+	.site-navigation .menu-item.le-top a:before{ background-position: 0 -22px; }
+	.site-navigation .menu-item.le-top > a:hover:before, .site-navigation .current_page_item.le-top > a:before{ background-position: 0 -44px; }
+
+	.site-navigation .menu-item.au-hasard a:before{ background-position: 0 -110px; }
+	.site-navigation .menu-item.au-hasard:hover > a:before, .site-navigation .current_page_item.au-hasard > a:before{ background-position: 0 -132px; }
+
+	.site-navigation .menu-item.au-hasard{ cursor: pointer; }
 }
