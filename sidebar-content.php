@@ -12,5 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 }
 ?>
 <div id="content-sidebar" class="content-sidebar widget-area" role="complementary">
+	<div class="cover-border"></div>
 	<?php dynamic_sidebar( 'sidebar-2' ); ?>
 </div><!-- #content-sidebar -->

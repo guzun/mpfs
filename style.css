@@ -4303,8 +4303,15 @@ a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
 	.site-navigation .menu-item.au-hasard:hover > a:before, .site-navigation .current_page_item.au-hasard > a:before{ background-position: 0 -132px; }
 
 	.site-navigation .menu-item.au-hasard{ cursor: pointer; }
-}
 
+
+}
+@media screen and (min-width: 672px){
+	.cover-border{ height: 72px; width: 20px; position: absolute; margin-top: -72px; margin-left: -18px; background-color: #fff; }
+	.content-sidebar:before{ border-left: 1px dotted; position: absolute; width: 2px; height: 100%; display: block; margin-left: -15px; margin-top: -400px; }
+
+	.widget-ads{margin-left: -10px;}
+}
 
 /*related posts*/
 
@@ -4313,7 +4320,7 @@ a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
 }
 .box-related .related-title, .box-related h4{ padding-left: 15px }
 .box-related h4{margin-top: 5px; color: #707070}
-.box-related article{ width: 33%; display: inline-block; }
+.box-related article{ width: 33%; display: inline-block; vertical-align: top; }
 
 @media screen and (max-width: 782px){
 	.box-related article{ width: 100%; display: inline-block; }
