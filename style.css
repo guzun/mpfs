@@ -4154,8 +4154,8 @@ a.post-thumbnail:hover {
 /*  BOF customization */
 
 .like.voteaction {
-	width: 48px;
-	height: 42px;
+	width: 35px;
+	height: 51px;
 	left: -50px;
 	display: block;
 	position: absolute;
@@ -4165,10 +4165,10 @@ a.post-thumbnail:hover {
 }
 
 .like .like-count{
-	width: 48px;
+	width: 35px;
 	text-align: center;
 	position: absolute;
-	top: 10px;
+	top: 23px;
 	left:0px;
 	font-size: 12px;
 	font-family: Helvetica, Arial, sans-serif;
@@ -4307,10 +4307,13 @@ a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
 
 }
 @media screen and (min-width: 672px){
-	.cover-border{ height: 72px; width: 20px; position: absolute; margin-top: -72px; margin-left: -18px; background-color: #fff; }
-	.content-sidebar:before{ border-left: 1px dotted; position: absolute; width: 2px; height: 100%; display: block; margin-left: -15px; margin-top: -400px; }
+	.cover-border{ height: 236px; width: 20px; position: absolute; margin-top: -236px; margin-left: -18px; background-color: #fff; }
+	.content-sidebar:before{ border-left: 1px dotted; position: absolute; width: 2px; height: 100%; display: block; margin-left: -15px; margin-top: -490px; }
 
 	.widget-ads{margin-left: -10px;}
+}
+@media screen and (max-width: 782px){
+	.search-toggle{display: none;}
 }
 
 /*related posts*/
@@ -4332,4 +4335,23 @@ a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
 		padding-left: 0px;
 		padding-right: 10px;
 	}	
+}
+
+#hide-this{ margin: 0 30px; z-index: 2; position: relative; z-index: 10; display: block; }
+#hide-this .top-pointer {
+	background: url(images/top-pointer.png) 0 0 no-repeat;
+	width: 21px;
+	height: 12px;
+	position: absolute;
+	left: 25px;
+	top: -11px;
+	z-index: 200;
+}
+
+#hide-this .message {
+	background: #ffffe0;
+	margin: 20px 0 30px 0;
+	padding: 20px;
+	border: 1px solid #fff576;
+	border-radius: 6px;
 }

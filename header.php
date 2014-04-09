@@ -61,5 +61,13 @@
 			</div>
 		</div>
 	</header><!-- #masthead -->
-
+	<div class="b w_940" id="hide-this"><!--Floating box-->
+        <div class="top-pointer">&nbsp;</div>
+        <div class="message">
+        	<!-- <a href="#hide-this" style="float:right;cursor:pointer" class="close">close me</a> -->
+        	L'<b>autocorrection</b> des téléphones c'est bien pratique ! Mais ça amène aussi souvent des erreurs qui changent carrément le sens de nos phrases. 
+        	Ce sont ces erreurs qui nous font rire et que nous répertorions ici. Si toi aussi tu a vécu ce genre de situation, 
+        	<a href="http://www.putaindautocorrection.com/ajoute-ton-sms"><b>ajoute ton SMS ici</b></a> :).
+        </div>
+    </div>
 	<div id="main" class="site-main">
