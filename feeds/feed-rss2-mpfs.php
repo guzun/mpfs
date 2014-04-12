@@ -286,7 +286,17 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 
 	<?php endif; ?>
 
-	<likes><?php echo sizeof(get_post_meta( $post->ID , 'like' )); ?></likes>
+	<likes>
+		<?php 
+			$nr_likes = get_post_meta( $post->ID , 'nr_like', true );
+			if(is_numeric($nr_likes)){
+				echo $nr_likes;
+			}else{
+				echo 0;
+			}
+			
+		?>
+	</likes>
 
 <?php endif; ?>
 
