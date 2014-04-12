@@ -242,6 +242,9 @@ function twentyfourteen_scripts() {
 	wp_enqueue_style( 'twentyfourteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style', 'genericons' ), '20131205' );
 	wp_style_add_data( 'twentyfourteen-ie', 'conditional', 'lt IE 9' );
 
+	/*wp_enqueue_style( 'fontello-icons', get_template_directory_uri() . '/css/fontello/css/fontello.css', array( 'twentyfourteen-style', 'genericons' ), '20131205' );
+	wp_style_add_data( 'fontello-icons');*/
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
