@@ -51,7 +51,7 @@
                 update_post_meta( $post_id , 'nr_like' , count( $likes ) );
                 update_post_meta( $post_id , 'like' ,  $likes );
 
-                self::attachUserVote($post_id); /*add this post to user's voted_posts meta*/
+                //self::attachUserVote($post_id); /*add this post to user's voted_posts meta*/
                 
                /* $date = get_post_meta( $post_id , 'hot_date', true );
                 if( empty( $date ) ){
@@ -80,8 +80,7 @@
                     }
                 }
                 
-                self::removeUserVote($post_id); /*remove this post from user's voted_posts meta*/
-
+                
                 update_post_meta( $post_id , 'like' ,  $likes );
                 update_post_meta( $post_id , 'nr_like' ,  count( $likes ) );
                 /*if( count( $likes ) < 10 ){
@@ -243,7 +242,12 @@
 
         static function count( $post_id ){
             $result = get_post_meta( $post_id , 'like', true );
-            return count( $result );
+            if(is_array($result)){
+                return count( $result );    
+            }else{
+                return 0;
+            }
+            
         }
 
         static function content( $post_id , $return = false,$show_icon = true, $show_label = false, $additional_class = '' ){
@@ -330,60 +334,6 @@
                 return $result;
             }
         }
-
-        public static function attachUserVote( $post_id ){ /*add voted post to user meta*/
-            
-            if ( is_user_logged_in() ) {
-                /* we will store voted posts as an array in a meta data called voted_posts */
-                global $current_user;
-                get_currentuserinfo();
-                $user_id = $current_user->ID;
         
-                $voted_posts = array();
-        
-                if(is_array(get_user_meta( $user_id, ZIP_NAME.'_voted_posts',true ) ) ){
-                    $voted_posts = get_user_meta( $user_id, ZIP_NAME.'_voted_posts',true  );
-                    if( !in_array( $post_id , $voted_posts  ) ){
-                        $voted_posts[] = $post_id;
-                        update_user_meta( $user_id, ZIP_NAME.'_voted_posts', $voted_posts );
-                    }
-                }else{
-                    $voted_posts[] = $post_id;
-                    update_user_meta( $user_id, ZIP_NAME.'_voted_posts', $voted_posts );  
-                }
-                    
-                
-                
-                
-            }   
-            
-        }
-        
-        public static function removeUserVote( $post_id ){ /*add voted post to user meta*/
-            
-            if ( is_user_logged_in() ) {
-                /* we will store voted posts as an array in a meta data called voted_posts */
-                global $current_user;
-                get_currentuserinfo();
-                $user_id = $current_user->ID;
-        
-                $voted_posts = array();
-        
-                if(is_array(get_user_meta( $user_id, ZIP_NAME.'_voted_posts',true ) ) ){
-                    $voted_posts = get_user_meta( $user_id, ZIP_NAME.'_voted_posts',true  );
-                    
-                    if( in_array( $post_id , $voted_posts  ) ){ /*if current post  was found in the user meta data we will remove it*/
-                        unset($voted_posts[ array_search ( $post_id , $voted_posts  ) ] );
-                        update_user_meta( $user_id, ZIP_NAME.'_voted_posts', $voted_posts );
-                    }
-                }
-                
-                
-                
-                
-                
-            }   
-            
-        }
     }
 ?>
