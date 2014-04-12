@@ -1,4 +1,19 @@
 <?php
+
+
+	function mpfs__autoload( $class_name ){ //echo $class_name .'<br>';
+        if( substr( $class_name , 0 , 6 ) == 'widget'){
+            $class_name = str_replace( 'widget_' , '' ,  $class_name );
+            if( is_file( get_template_directory() . '/inc/custom-widgets/' . $class_name . '.php' ) ){
+                include get_template_directory() . '/inc/custom-widgets/' . $class_name . '.php';
+
+            }
+        }
+		
+	}
+
+	spl_autoload_register ("mpfs__autoload");
+
 	// Create a new filtering function that will add our where clause to the query
 	function filter_where_07( $where = '' ) {
 		// posts in the last 30 days
@@ -13,7 +28,19 @@
 	}	
 
 	function mpfs_get_feed_info(){
-		$feed_info = array( array('title' => "Appli PAC : Putain d'Autocorrection !",
+
+		// get the App info from options
+		// if requires Advanced Custom fields installed together with Repeter and Options Page extentions
+		if(function_exists('get_field')){
+			$feed_info = get_field('feed_info','option'); 	
+		}else{
+			$feed_info = '';
+		}
+		
+
+		// fallback in case the data is not acailable from options
+		if(!is_array($feed_info)){
+			$feed_info = array( array('title' => "Appli PAC : Putain d'Autocorrection !",
 									'small_icon' => "http://www.mesparentsfontdessms.com/wp-content/uploads/2013/11/pac-small.png",
 									'big_icon' =>"http://www.mesparentsfontdessms.com/wp-content/uploads/2013/11/PAC-big.png",
 									'ios_url' => "https://itunes.apple.com/fr/app/p*****-dautocorrection-sms-!/id615982234?mt=8",
@@ -38,6 +65,8 @@
 									'android_url' => "http://chersvoisins.tumblr.com/"),
 
 			);
+		}
+		
 
 			return $feed_info;
 	}
@@ -103,6 +132,11 @@
         }
 
         return $query;
-    }			
+    }		
+
+
+    register_widget("widget_category_icons");	
+
+    register_widget("widget_front_submission");	
 				
 ?>
