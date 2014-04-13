@@ -4383,3 +4383,7 @@ a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
 .mpfs-front-btn a{color: #767676 !important;}
 
 .mpfs-front-btn .genericon{ margin-right: 20px; font-size: 25px; }
+
+@media screen and (min-width: 783px){
+	.masthead-fixed #hide-this{ top: 88px; } 	
+}
