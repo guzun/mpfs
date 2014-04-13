@@ -231,8 +231,10 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 			
 			$wp_query = new WP_Query( $query_args_array ); //var_dump($wp_query);
 		}			
-		//deb::e($wp_query);
-//wp_mail('guzun.allex@gmail.com', 'testtik_hattab' , var_export($wp_query,true));
+		
+		if( isset($wp_query->is_feed) ){
+			$wp_query->is_feed = true;
+		}
 	?>
 
 	<?php while( have_posts()) : the_post(); ?>
