@@ -294,7 +294,7 @@
 
                            
                             <i class="like-count like-<?php echo $post -> ID; ?>"><?php echo self::count( $post -> ID ); ?></i>
-                           
+                            <span class="vote">Vote !</span>
                         </span>
 <?php
                     
@@ -323,7 +323,7 @@
                         <?php } ?>
                         
                         <i class="like-count like-<?php echo $post -> ID; ?>"><?php echo self::count( $post -> ID ); ?></i>
-                        
+                        <span class="vote">Vote !</span>
                     </span>
 <?php
                 }
