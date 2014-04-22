@@ -24,7 +24,7 @@ get_header(); ?>
 			
 			
 							
-            $the_query = new WP_Query( array(
+            $wp_query = new WP_Query( array(
                 'post_status' => 'publish' ,
                 'post_type' => 'post',
                 'paged' => $paged ,
@@ -43,10 +43,10 @@ get_header(); ?>
 				
 			remove_filter( 'posts_where', 'filter_where_30' );
 			
-				if ( $the_query->have_posts() ) :
+				if ( $wp_query->have_posts() ) :
 			
 				// Start the Loop.
-				while ( $the_query->have_posts() ) : $the_query->the_post();
+				while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
 					/*
 					 * Include the post format-specific template for the content. If you want to
@@ -56,7 +56,8 @@ get_header(); ?>
 					get_template_part( 'content', get_post_format() );
 
 				endwhile;
-
+					// Previous/next post navigation.
+					twentyfourteen_paging_nav();
 				else :
 					// If no content, include the "No posts found" template.
 					get_template_part( 'content', 'none' );
