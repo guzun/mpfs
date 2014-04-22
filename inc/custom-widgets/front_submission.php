@@ -29,7 +29,7 @@ class widget_front_submission extends WP_Widget {
         ?>  
         <div class="mpfs-front-btn">
 
-            <a class="" href="<?php echo $page_url; ?>">
+            <a class="" href="<?php echo $page_url; ?>" target="_blank">
                 <span class="genericon genericon-cloud-upload"></span>
                 <?php echo $title; ?>
             </a>
