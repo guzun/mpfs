@@ -7,7 +7,7 @@
     
     $nr = 3;
     
-    $label  = __( 'Related Posts' , 'twentyfourteen' );
+    $label  = __( 'Tu vas aussi kiffer :' , 'twentyfourteen' );
     $query  = similar_query( $post -> ID , $tax , $nr );
     
 
@@ -26,7 +26,7 @@
     if( !empty( $result) ){
 ?>
         <div class="box-related clearfix">
-            <h3 class="related-title"><?php _e( 'Related posts' , 'twentyfourteen' ); ?></h3>
+            <h3 class="related-title"><?php _e( 'Tu vas aussi kiffer :' , 'twentyfourteen' ); ?></h3>
             <!-- <p class="delimiter">&nbsp;</p> -->
             <div>
             <?php
