@@ -82,7 +82,7 @@ body {
 }
 
 a {
-	color: #24890d;
+	color: #257CB6;
 	text-decoration: none;
 }
 
@@ -97,7 +97,7 @@ a:active {
 
 a:active,
 a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 h1,
@@ -428,13 +428,13 @@ hr {
  * to achieve a better experience. See http://core.trac.wordpress.org/ticket/25898.
  */
 ::selection {
-	background: #24890d;
+	background: #257CB6;
 	color: #fff;
 	text-shadow: none;
 }
 
 ::-moz-selection {
-	background: #24890d;
+	background: #257CB6;
 	color: #fff;
 	text-shadow: none;
 }
@@ -824,7 +824,7 @@ span + .edit-link:before,
 /* Search in the header */
 
 .search-toggle {
-	background-color: #24890d;
+	background-color: #257CB6;
 	cursor: pointer;
 	float: right;
 	height: 48px;
@@ -900,7 +900,7 @@ span + .edit-link:before,
 }
 
 .site-navigation a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .site-navigation .current_page_item > a,
@@ -1045,7 +1045,7 @@ a.post-thumbnail:hover {
 }
 
 .entry-title a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .site-content .entry-header {
@@ -1077,7 +1077,7 @@ a.post-thumbnail:hover {
 }
 
 .entry-meta a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .sticky .entry-date {
@@ -1094,7 +1094,7 @@ a.post-thumbnail:hover {
 }
 
 .cat-links a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .byline {
@@ -1133,7 +1133,7 @@ a.post-thumbnail:hover {
 }
 
 .entry-meta .tag-links a:hover {
-	background-color: #41a62a;
+	background-color: #2A6FA6;
 	color: #fff;
 }
 
@@ -1150,7 +1150,7 @@ a.post-thumbnail:hover {
 }
 
 .entry-meta .tag-links a:hover:before {
-	border-right-color: #41a62a;
+	border-right-color: #2A6FA6;
 }
 
 .entry-meta .tag-links a:after {
@@ -1260,7 +1260,7 @@ a.post-thumbnail:hover {
 }
 
 .entry-content .edit-link a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 /* Mediaelements */
@@ -1332,8 +1332,8 @@ a.post-thumbnail:hover {
 }
 
 .page-links a:hover {
-	background: #41a62a;
-	border: 1px solid #41a62a;
+	background: #2A6FA6;
+	border: 1px solid #2A6FA6;
 	color: #fff;
 }
 
@@ -1536,7 +1536,7 @@ a.post-thumbnail:hover {
 
 .post-navigation a:hover,
 .image-navigation a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 /* Paging Navigation */
@@ -1570,7 +1570,7 @@ a.post-thumbnail:hover {
 }
 
 .paging-navigation a:hover {
-	border-top: 5px solid #41a62a;
+	border-top: 5px solid #2A6FA6;
 	color: #2b2b2b;
 }
 
@@ -1792,7 +1792,7 @@ a.post-thumbnail:hover {
 .comment-list .pingback a:hover,
 .comment-list .trackback a:hover,
 .comment-metadata a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .comment-list article,
@@ -1950,7 +1950,7 @@ a.post-thumbnail:hover {
 }
 
 .comment-reply-title small a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .comment-reply-title small a:before {
@@ -2053,7 +2053,7 @@ a.post-thumbnail:hover {
 }
 
 .widget a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .widget h1,
@@ -2232,7 +2232,7 @@ a.post-thumbnail:hover {
 }
 
 .widget-title a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 /* Calendar Widget*/
@@ -2267,7 +2267,7 @@ a.post-thumbnail:hover {
 }
 
 .widget_calendar tbody a:hover {
-	background-color: #41a62a;
+	background-color: #2A6FA6;
 }
 
 .widget_calendar tbody a:hover {
@@ -2319,7 +2319,7 @@ a.post-thumbnail:hover {
 }
 
 .widget_twentyfourteen_ephemera .entry-meta a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .widget_twentyfourteen_ephemera .entry-content ul,
@@ -2429,11 +2429,11 @@ a.post-thumbnail:hover {
  */
 
 .content-sidebar .widget a {
-	color: #24890d;
+	color: #257CB6;
 }
 
 .content-sidebar .widget a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .content-sidebar .widget pre {
@@ -2506,7 +2506,7 @@ a.post-thumbnail:hover {
 .content-sidebar .widget input[type="reset"]:focus,
 .content-sidebar .widget input[type="submit"]:hover,
 .content-sidebar .widget input[type="submit"]:focus {
-	background-color: #41a62a;
+	background-color: #2A6FA6;
 }
 
 .content-sidebar .widget input[type="button"]:active,
@@ -2534,7 +2534,7 @@ a.post-thumbnail:hover {
 }
 
 .content-sidebar .widget .widget-title a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 /* List Style Widgets*/
@@ -2627,7 +2627,7 @@ a.post-thumbnail:hover {
 }
 
 .content-sidebar .widget_twentyfourteen_ephemera .entry-meta a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .content-sidebar.widget_twentyfourteen_ephemera blockquote cite {
@@ -2675,7 +2675,7 @@ a.post-thumbnail:hover {
 }
 
 .site-info a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 
@@ -2737,7 +2737,7 @@ a.post-thumbnail:hover {
 }
 
 .featured-content a:hover {
-	color: #41a62a;
+	color: #2A6FA6;
 }
 
 .featured-content .entry-meta {
@@ -2815,7 +2815,7 @@ a.post-thumbnail:hover {
 }
 
 .slider-control-paging a:hover:before {
-	background-color: #41a62a;
+	background-color: #2A6FA6;
 }
 
 .slider-control-paging .slider-active:before,
@@ -3378,7 +3378,7 @@ a.post-thumbnail:hover {
 
 	.primary-navigation ul ul a:hover,
 	.primary-navigation ul ul li.focus > a {
-		background-color: #41a62a;
+		background-color: #2A6FA6;
 	}
 
 	.primary-navigation ul li:hover > ul,
@@ -3618,7 +3618,7 @@ a.post-thumbnail:hover {
 
 	.secondary-navigation ul ul a:hover,
 	.secondary-navigation ul ul li.focus > a {
-		background-color: #41a62a;
+		background-color: #2A6FA6;
 	}
 
 	.secondary-navigation ul li:hover > ul,
@@ -4386,4 +4386,11 @@ a.post-thumbnail:hover, .post-thumbnail{background-color: transparent;}
 
 @media screen and (min-width: 783px){
 	.masthead-fixed #hide-this{ top: 88px; } 	
+}
+
+.vote{
+	position: absolute;
+	bottom: -20px;
+	width: 43px;
+	left: -2px;
 }
